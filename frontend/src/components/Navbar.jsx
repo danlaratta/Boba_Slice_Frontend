@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    position: absolute;
+    /* background-color: ${props => props.color === 1 ? "#fff" : "rbga(0, 0, 0, 0)"}; */
+    background-color: ${props => props.color === 1 ? "#000" : "rbga(0, 0, 0, 0)"};
+    box-shadow: ${props => props.color === 1 ? "0rem 0.2rem 0.8rem #565656" : "none"};
+    position: fixed;
     z-index: 10;
 `
 
 const Wrapper = styled.div`
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
+    align-items: center;
 `
 
 const LeftSection = styled.div`
@@ -22,7 +25,8 @@ const LeftSection = styled.div`
 const Logo = styled(Link)`
     text-decoration: none;
     font-size: 2.6rem;
-    color: #fff;
+    /* color: ${props => props.color === 1 ? "#000" : "#fff"}; */
+    color:#fff;
     font-weight: bold;
 `
 
@@ -44,9 +48,11 @@ const SignUp = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: ${props => props.color === 1 ? "0.2rem solid #000" : "0.2rem solid #fff"}; */
     border: 0.2rem solid #fff;
     border-radius: 0.75rem;
     text-decoration: none;
+    /* color: ${props => props.color === 1 ? "#000" : "#fff"}; */
     color: #fff;
     font-size: 1.6rem;
     font-weight:  600;
@@ -66,9 +72,11 @@ const SignIn = styled(Link)`
     border: 0.2rem solid #fff;
     border-radius: 0.75rem;
     text-decoration: none;
+    /* color: ${props => props.color === 1 ? "#fff" : "#000"}; */
     color: #000;
     font-size: 1.6rem;
     font-weight: 600;
+    /* background-color: ${props => props.color === 1 ? "#000" : "#fff"}; */
     background-color: #fff;
     padding: 1rem 0rem;
 
@@ -80,17 +88,24 @@ const SignIn = styled(Link)`
 `
 
 const Navbar = () => {
+    const [color, setColor] = useState(0);
+
+    const changecolor = () => {
+        window.scrollY >= 100 ? setColor(1) : setColor(0);
+    }
+    window.addEventListener('scroll', changecolor);
+
     return (
-        <Container>
+        <Container color={color}>
             <Wrapper>
                 <LeftSection>
-                    <Logo to='/'> Boba Slice </Logo>
+                    <Logo to='/' color={color}> Boba Slice </Logo>
                 </LeftSection>
 
                 <RightSection>
                     <Account>
-                        <SignUp> Sign Up </SignUp> 
-                        <SignIn> Sign In </SignIn> 
+                        <SignUp color={color}> Sign Up </SignUp> 
+                        <SignIn color={color}> Sign In </SignIn> 
                     </Account>
                 </RightSection>
             </Wrapper>
