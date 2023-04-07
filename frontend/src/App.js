@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import BobaMenu from './pages/BobaMenu';
 import PizzaMenu from './pages/PizzaMenu';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const Container = styled.div`
   width: 100%;
@@ -21,6 +22,8 @@ function App() {
         <Route path='/boba' element={<BobaMenu />} />
         <Route path='/pizza' element={<PizzaMenu />} />
       </Routes>
+
+      <Footer />
     </Container>
   );
 }

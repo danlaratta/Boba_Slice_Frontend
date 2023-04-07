@@ -4,7 +4,7 @@ import AboutImage from '../assets/About.jpg';
 
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 75vh;
     display: flex;
     justify-content: center;
 `
@@ -49,7 +49,7 @@ const ImageContainer = styled.div`
 `
 
 const AboutImg = styled.img`
-    width: 70%;
+    width: 60%;
     border-radius: 2rem;
 `
 
