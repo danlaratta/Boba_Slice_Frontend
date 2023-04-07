@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { Parallax } from 'react-parallax';
-import ParallaxBg from '../assets/ParallaxBg.jpg'
+import ParallaxBg from '../assets/ParallaxBg.jpg';
 
 const Container = styled.div`
   width: 100%;
