@@ -6,6 +6,7 @@ const Container = styled.div`
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
     position: absolute;
+    z-index: 10;
 `
 
 const Wrapper = styled.div`
