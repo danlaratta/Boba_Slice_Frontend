@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
-import Feature1 from '../assets/feature1.jpg'
-import Feature2 from '../assets/feature2.jpg'
-import Feature3 from '../assets/feature3.jpg'
-import Feature4 from '../assets/feature4.jpg'
-import Feature5 from '../assets/feature5.jpg'
-import Feature6 from '../assets/feature6.jpg'
+import Feature1 from '../assets/feature1.jpg';
+import Feature2 from '../assets/feature2.jpg';
+import Feature3 from '../assets/feature3.jpg';
+import Feature4 from '../assets/feature4.jpg';
+import Feature5 from '../assets/feature5.jpg';
+import Feature6 from '../assets/feature6.jpg';
 
 const Container = styled.div`
     width: 100%;

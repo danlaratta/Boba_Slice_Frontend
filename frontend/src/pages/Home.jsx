@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
+import ParallaxSection from '../components/ParallaxSection';
 
 const Container = styled.div`
   width: 100%;
@@ -20,6 +21,7 @@ const Home = () => {
             <Wrapper>
                 <Hero />
                 <Features />
+                <ParallaxSection />
             </Wrapper>
         </Container>
     );

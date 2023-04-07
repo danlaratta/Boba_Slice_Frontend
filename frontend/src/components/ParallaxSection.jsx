@@ -1,19 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import HeroBg from '../assets/Hero-bg.jpg';
 import { Link } from 'react-router-dom';
+import { Parallax } from 'react-parallax';
+import ParallaxBg from '../assets/ParallaxBg.jpg'
 
 const Container = styled.div`
-    min-height: 100vh;
-    width: 100%;
-    background-image: url(${HeroBg});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-`
-
-const Wrapper = styled.div`
-    position: relative;
+  width: 100%;
+  height: 100vh;
 `
 
 const Overlay = styled.div`
@@ -25,34 +18,35 @@ const Overlay = styled.div`
     left: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 `
 
 const TextContainer = styled.div`
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
 `
 
 const Title = styled.span`
-    font-size: 7rem;
+    font-size: 5rem;
     font-weight: bold;
     color: #fff;
 `
 
 
 const Tagline = styled.span`
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 500;
     color: #fff;
+    width: 60%;
 `
 
 const LinksContainer = styled.div`
-    width: 35%;
+    width: 60%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 2rem;
     margin-top: 1rem;
 `
@@ -64,10 +58,10 @@ const MenuLink = styled(Link)`
     justify-content: center;
     border: 0.2rem solid #fff;
     border-radius: 0.5rem;
-    padding: 0.75rem 0rem;
+    padding: 1rem 1rem;
     text-decoration: none;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 500;
 
     &:hover {
@@ -75,24 +69,31 @@ const MenuLink = styled(Link)`
     }
 `
 
-const Hero = () => {
+const ParallaxSection = () => {
     return (
         <Container>
-            <Wrapper>
+            <Parallax
+                blur={{ min: -15, max: 15 }}
+                bgImage={ParallaxBg}
+                bgImageAlt="background image"
+                strength={-200}
+                style={{height: '100vh'}}
+            >
                 <Overlay>
                     <TextContainer>
-                        <Title> Boba Slice </Title>
-                        <Tagline> The Best Boba and Pizza Around </Tagline>
+                        <Title> Great Service, Great Taste </Title>
+                        <Tagline> Made with High Quality and Fresh Ingredients you can Taste in Every Bite </Tagline>
 
                         <LinksContainer> 
-                            <MenuLink to='/boba'> Boba </MenuLink>
-                            <MenuLink to='/pizza'> Pizza </MenuLink>
+                            <MenuLink to='/boba'> Boba Menu </MenuLink>
+                            <MenuLink to='/pizza'> Pizza Menu </MenuLink>
                         </LinksContainer>
                     </TextContainer>
                 </Overlay>
-            </Wrapper>
+
+            </Parallax>
         </Container>
     );
 }
 
-export default Hero;
+export default ParallaxSection;
