@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     width: 100%;
-    /* background-color: ${props => props.color === 1 ? "#fff" : "rbga(0, 0, 0, 0)"}; */
+    height: 6.5rem;
     background-color: ${props => props.color === 1 ? "#000" : "rbga(0, 0, 0, 0)"};
     box-shadow: ${props => props.color === 1 ? "0rem 0.2rem 0.8rem #565656" : "none"};
     position: fixed;
@@ -25,9 +25,12 @@ const LeftSection = styled.div`
 const Logo = styled(Link)`
     text-decoration: none;
     font-size: 2.6rem;
-    /* color: ${props => props.color === 1 ? "#000" : "#fff"}; */
     color:#fff;
     font-weight: bold;
+
+    &:hover {
+        color: var(--primary);
+    }
 `
 
 const RightSection = styled.div`
@@ -48,18 +51,16 @@ const SignUp = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: ${props => props.color === 1 ? "0.2rem solid #000" : "0.2rem solid #fff"}; */
     border: 0.2rem solid #fff;
     border-radius: 0.75rem;
     text-decoration: none;
-    /* color: ${props => props.color === 1 ? "#000" : "#fff"}; */
     color: #fff;
     font-size: 1.6rem;
     font-weight:  600;
     padding: 1rem 0rem;
 
     &:hover{
-        background-color: #000;
+        background-color: var(--primary);
         cursor: pointer;
     }
 `
@@ -72,16 +73,14 @@ const SignIn = styled(Link)`
     border: 0.2rem solid #fff;
     border-radius: 0.75rem;
     text-decoration: none;
-    /* color: ${props => props.color === 1 ? "#fff" : "#000"}; */
     color: #000;
     font-size: 1.6rem;
     font-weight: 600;
-    /* background-color: ${props => props.color === 1 ? "#000" : "#fff"}; */
     background-color: #fff;
     padding: 1rem 0rem;
 
     &:hover{
-        background-color: #000;
+        background-color: var(--primary);
         cursor: pointer;
         color: #fff;
     }

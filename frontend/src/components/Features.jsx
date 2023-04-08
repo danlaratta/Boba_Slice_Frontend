@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
+import FeatureImage from './FeatureImage';
 import Feature1 from '../assets/feature1.jpg';
 import Feature2 from '../assets/feature2.jpg';
 import Feature3 from '../assets/feature3.jpg';
@@ -10,7 +11,7 @@ import Feature6 from '../assets/feature6.jpg';
 
 const Container = styled.div`
     width: 100%;
-    height:100vh;
+    height: calc(100vh - 6.5rem);
     display: flex;
     justify-content: center;
 `
@@ -50,7 +51,7 @@ const MenuLink = styled(Link)`
     color: #000;
 
     &:hover {
-        color: red;
+        color: var(--primary);
     }
 `
 
@@ -58,18 +59,50 @@ const ImagesContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
 `
 
 const FeatureImg = styled.img`
     width: 25%;
     border-radius: 2rem;
+    transition: ease-in-out 0.4s;
+
+    &:hover {
+        transform: scale(0.9);
+    }
 `
 
 const Features = () => {
     return (
         <Container>
             <Wrapper>
+                <FeatureContainer>
+                    <TextContainer>
+                        <Title> Featured Boba </Title>
+                        <MenuLink> Boba Menu </MenuLink>
+                    </TextContainer>
+
+                    <ImagesContainer>
+                        <FeatureImage img={Feature1} text="Test" />
+                        <FeatureImage img={Feature2} text="Test" />
+                        <FeatureImage img={Feature3} text="Test" />
+                    </ImagesContainer>
+                </FeatureContainer>
+
+                <FeatureContainer>
+                    <TextContainer>
+                        <Title> Featured Pizza </Title>
+                        <MenuLink> Pizza Menu  </MenuLink>
+                    </TextContainer>
+
+                    <ImagesContainer>
+                        <FeatureImage img={Feature4} text="Test" />
+                        <FeatureImage img={Feature5} text="Test" />
+                        <FeatureImage img={Feature6} text="Test" />
+                    </ImagesContainer>
+                </FeatureContainer>
+
+                {/*
                 <FeatureContainer>
                     <TextContainer>
                         <Title> Featured Boba </Title>
@@ -95,6 +128,7 @@ const Features = () => {
                         <FeatureImg src={Feature6} />
                     </ImagesContainer>
                 </FeatureContainer>
+                */}
             </Wrapper>
         </Container>
     );

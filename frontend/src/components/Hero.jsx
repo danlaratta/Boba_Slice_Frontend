@@ -71,7 +71,7 @@ const MenuLink = styled(Link)`
     font-weight: 500;
 
     &:hover {
-        background-color: #000;
+        background-color: var(--primary);
     }
 `
 

@@ -6,11 +6,11 @@ import ParallaxBg from '../assets/ParallaxBg.jpg';
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 6.3rem);
 `
 
 const Overlay = styled.div`
-    min-height: 100vh;
+    min-height: calc(100vh - 6.3rem);
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -77,7 +77,7 @@ const ParallaxSection = () => {
                 bgImage={ParallaxBg}
                 bgImageAlt="background image"
                 strength={-200}
-                style={{height: '100vh'}}
+                style={{height: 'calc(100vh - 6.3rem)'}}
             >
                 <Overlay>
                     <TextContainer>
