@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 const Container = styled.div`
     width: 100%;
     height: 6.5rem;
-    background-color: ${props => props.color === 1 ? "#000" : "rbga(0, 0, 0, 0)"};
-    box-shadow: ${props => props.color === 1 ? "0rem 0.2rem 0.8rem #565656" : "none"};
+    /* background-color: ${props => props.color === 1 ? "#fff" : "rbga(0, 0, 0, 0)"}; */
+    background-color: #fff;
+    box-shadow: 0rem 0.2rem 0.8rem #565656;
     position: fixed;
     z-index: 10;
 `
@@ -25,7 +26,7 @@ const LeftSection = styled.div`
 const Logo = styled(Link)`
     text-decoration: none;
     font-size: 2.6rem;
-    color:#fff;
+    color: #000;
     font-weight: bold;
 
     &:hover {
@@ -46,15 +47,15 @@ const Account = styled.div`
     margin-right: 5rem;
 `
 
-const SignUp = styled(Link)`
+const SignIn = styled(Link)`
     width: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0.2rem solid #fff;
+    border: 0.2rem solid #000;
     border-radius: 0.75rem;
     text-decoration: none;
-    color: #fff;
+    color: #000;
     font-size: 1.6rem;
     font-weight:  600;
     padding: 1rem 0rem;
@@ -62,22 +63,23 @@ const SignUp = styled(Link)`
     &:hover{
         background-color: var(--primary);
         cursor: pointer;
+        color: #fff;
     }
 `
 
-const SignIn = styled(Link)`
+const SignUp = styled(Link)`
     width: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0.2rem solid #fff;
     border-radius: 0.75rem;
     text-decoration: none;
-    color: #000;
+    color: #fff;
     font-size: 1.6rem;
     font-weight: 600;
-    background-color: #fff;
+    background-color: #000;
     padding: 1rem 0rem;
+    border: 0.2rem solid #000;
 
     &:hover{
         background-color: var(--primary);
@@ -103,8 +105,8 @@ const Navbar = () => {
 
                 <RightSection>
                     <Account>
-                        <SignUp color={color}> Sign Up </SignUp> 
-                        <SignIn color={color}> Sign In </SignIn> 
+                        <SignIn color={color}> Sign In </SignIn>
+                        <SignUp to='/signup' color={color}> Sign Up </SignUp>  
                     </Account>
                 </RightSection>
             </Wrapper>
