@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro'
+import MenuItemApi from '../apis/MenuItemApi';
 
 const Container = styled.div`
   width: 100%;
@@ -7,9 +8,21 @@ const Container = styled.div`
 `
 
 const PizzaMenu = () => {
+
+    // Initial state is empty
+    const[dishList, setDishList] = useState([]);
+
+    // useEffect -> mount the dish items
+    useEffect(() => {
+        console.log("Dishes Mounted!");
+        MenuItemApi.getDishes(setDishList);
+        
+    }, []);
+
+
     return (
         <Container>
-            Pizza
+           {dishList.map(p => <h1 key={p.id}>{p.name}</h1>)}
         </Container>
     );
 }
