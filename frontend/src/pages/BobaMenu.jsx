@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
-import MenuItemApi from '../apis/MenuItemApi';
+import MenuItemAPI from '../apis/MenuItemApi';
 
 const Container = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ const BobaMenu = () => {
     // UseEffect -> mount the drinks items
     useEffect(() => {
         console.log("Drinks Mounted!");
-        MenuItemApi.getDrinks(setDrinkList);
+        MenuItemAPI.getDrinks(setDrinkList);
     }, []);
 
 
