@@ -45,7 +45,16 @@ const OrderAPI = {
         },
                 
     getOrderById: (setOrderList, orderId) => {
-        fetch( URI + `/${orderId}`  )
+        console.log(URI + `/${orderId}`)
+        fetch( URI + `/${orderId}`,{
+            headers: { "Content-Type" : "application/json",
+                        "Authorization" : "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGJlcnRwYWV6IiwiZXhwIjoxNjgxMTc2MjY0LCJpYXQiOjE2ODExNDAyNjR9.9Puqzxzaq0f1QICSyTPgfk_RhCHX5dW0vMSJqqAWbPc",
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE"
+                     },
+            credentials: "same-origin",
+            // mode: "no-cors"
+        } )
             .then((result) => { // go here if the response is successful (200 response)
                 console.log("RESULT")
                 console.log(result)
@@ -56,9 +65,9 @@ const OrderAPI = {
                 console.log("DATA: ")
                 console.log(data)
 
-                setDrinkList(data)
+                setOrderList(data)
             })
-            .catch((error) => {console.log(error)});  // if fetch fails, go here(400/500 responses)
+            .catch((error) => {console.log(error)})  // if fetch fails, go here(400/500 responses)
     },
     
     addItem: (setOrderList, menuItemId, orderId) => {
@@ -74,7 +83,7 @@ const OrderAPI = {
 
                 setOrderList(data);
             })
-            .catch((error) => {console.log(error)});
+            .catch((error) => {console.log(error)})
     },
 
     deleteItem: (setOrderList, menuItemId, orderId) => {
