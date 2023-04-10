@@ -5,6 +5,7 @@ import BobaMenu from './pages/BobaMenu';
 import PizzaMenu from './pages/PizzaMenu';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Signup from './components/Signup';
 
 const Container = styled.div`
   width: 100%;
@@ -21,6 +22,8 @@ function App() {
         <Route path='/' element={<Home />} exact />
         <Route path='/boba' element={<BobaMenu />} />
         <Route path='/pizza' element={<PizzaMenu />} />
+        <Route path='/signup' element={<Signup />} />
+        {/* <Route path='/signin' element={<Sign />} /> */}
       </Routes>
 
       <Footer />
