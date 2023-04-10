@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const Container = styled.div`
     width: 100%;
     height: 6.5rem;
-    /* background-color: ${props => props.color === 1 ? "#fff" : "rbga(0, 0, 0, 0)"}; */
     background-color: #fff;
     box-shadow: 0rem 0.2rem 0.8rem #565656;
     position: fixed;
@@ -90,6 +89,7 @@ const SignUp = styled(Link)`
 
 const Navbar = () => {
     const [color, setColor] = useState(0);
+    const [isSignedIn, setIsSignedIn] = useState(false)
 
     const changecolor = () => {
         window.scrollY >= 100 ? setColor(1) : setColor(0);
@@ -105,9 +105,14 @@ const Navbar = () => {
 
                 <RightSection>
                     <Account>
-                        <SignIn color={color}> Sign In </SignIn>
+                        <SignIn to='/signin' color={color}> Sign In </SignIn>
                         <SignUp to='/signup' color={color}> Sign Up </SignUp>  
                     </Account>
+
+                    <Menu>
+                        <SignIn to='/signin' color={color}> Sign In </SignIn>
+                        <SignUp to='/signup' color={color}> Sign Up </SignUp>  
+                    </Menu>
                 </RightSection>
             </Wrapper>
         </Container>
