@@ -72,9 +72,10 @@ const UserAPI = {
         } )
             .then( result => result.json() )
             .then( data => {
-                console.log("ORDER CREATED")
+                console.log("User CREATED")
                 console.log(data)
 
+                // dont wanna show all the information
                 alert("Your user was created!" + 
                     `\nID: ${data.id}` +
                     `\nEmail: ${data.name}` + 
