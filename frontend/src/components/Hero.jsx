@@ -72,6 +72,7 @@ const MenuLink = styled(Link)`
 
     &:hover {
         background-color: var(--primary);
+        cursor: pointer;
     }
 `
 

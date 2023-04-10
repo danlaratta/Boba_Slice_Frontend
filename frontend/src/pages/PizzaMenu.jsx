@@ -34,9 +34,9 @@ const MenuContainer = styled.div`
 const ItemRow = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    margin-bottom: 5rem;
+    grid-row-gap: 5rem;
 `
 
 const PizzaMenu = () => {
@@ -47,7 +47,7 @@ const PizzaMenu = () => {
     // useEffect -> mount the dish items
     useEffect(() => {
         console.log("Dishes Mounted!");
-        // MenuItemApi.getDishes(setDishList);
+        MenuItemApi.getDishes(setDishList);
         
     }, []);
 
@@ -59,19 +59,14 @@ const PizzaMenu = () => {
 
                 <MenuContainer>
                     <ItemRow>
-                        <MenuItem />
-                        <MenuItem />
-                        <MenuItem />
-                    </ItemRow>
-
-                    <ItemRow>
-                        <MenuItem />
-                        <MenuItem />
-                        <MenuItem />
+                        {dishList.map( dish => (
+                            <MenuItem name={dish.name} price={dish.price} desc={dish.description} />
+                        ))}
+                        
                     </ItemRow>
                 </MenuContainer>
             </Wrapper>
-           {/* {dishList.map(p => <h1 key={p.id}>{p.name}</h1>)} */}
+           
         </Container>
     );
 }
