@@ -109,10 +109,7 @@ const Navbar = () => {
                         <SignUp to='/signup' color={color}> Sign Up </SignUp>  
                     </Account>
 
-                    {/* <Menu>
-                        <SignIn to='/signin' color={color}> Sign In </SignIn>
-                        <SignUp to='/signup' color={color}> Sign Up </SignUp>  
-                    </Menu> */}
+                    
                 </RightSection>
             </Wrapper>
         </Container>
