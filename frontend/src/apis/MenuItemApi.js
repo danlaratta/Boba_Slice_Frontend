@@ -16,7 +16,7 @@ const MenuItemAPI = {
                 setDrinkList(data)
             })
             .catch((error) => {console.log(error)});  // if fetch fails, go here(400/500 responses)
-    }
+    },
     
     getDishes: (setDishList) => {
 
@@ -36,4 +36,4 @@ const MenuItemAPI = {
             .catch((error) => {console.log(error)});
     }
 }
-export default MenuItemApi;
+export default MenuItemAPI;
