@@ -5,6 +5,7 @@ import MenuItem from '../components/MenuItem';
 
 const Container = styled.div`
     width: 100%;
+    height: 100vh;
     background-color: #f3f3f3;
     display: flex;
     justify-content: center;
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 5rem;
 `
 
 const Title = styled.span`
@@ -26,8 +28,7 @@ const Title = styled.span`
 
 const MenuContainer = styled.div`
     width: 100%;
-    background-color: red;
-    margin-top: 5rem;
+    margin-top: 10rem;
 `
 
 const ItemRow = styled.div`
@@ -35,7 +36,7 @@ const ItemRow = styled.div`
     display: grid;
     grid-template-columns: auto auto auto;
     justify-items: center;
-    
+    margin-bottom: 5rem;
 `
 
 const PizzaMenu = () => {
