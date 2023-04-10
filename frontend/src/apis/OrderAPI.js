@@ -49,8 +49,10 @@ const OrderAPI = {
         fetch( URI + `/${orderId}`,{
             headers: { "Content-Type" : "application/json",
                         "Authorization" : "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGJlcnRwYWV6IiwiZXhwIjoxNjgxMTc2MjY0LCJpYXQiOjE2ODExNDAyNjR9.9Puqzxzaq0f1QICSyTPgfk_RhCHX5dW0vMSJqqAWbPc",
-                        "Access-Control-Allow-Origin": url.origin,
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE"
                      },
+            credentials: "same-origin",
             // mode: "no-cors"
         } )
             .then((result) => { // go here if the response is successful (200 response)

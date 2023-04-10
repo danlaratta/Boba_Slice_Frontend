@@ -7,13 +7,21 @@ const ShoppingCart = (props) => {
 
     useEffect(() => {
         console.log("Orders mounted!")
-        OrderAPI.getOrderById(setOrders,props.userId);
+        OrderAPI.getOrders(setOrders);
+
     }, [props.userId])
 
+    console.log(orderList[1].orderDish[0]);
     return (
         <>
             <ul>
-                {orderList.map(p => <li key={p.id}>{p.totalPrice}</li>)}
+                {orderList.map(p => <li key={p.id}>{p.orderDish.dish}</li>)}
+                {/* <li>{orderList[1].orderDish[0].dish.name}</li> */}
+                {/* <li>{orderList.id}</li>
+                <li>{orderList.totalPrice}</li>
+                <li>{orderList.timeStamp}</li>
+                <li>{orderList.progress}</li>
+                <li>{orderList.userOrder.id}</li> */}
             </ul>
         </>
     )
