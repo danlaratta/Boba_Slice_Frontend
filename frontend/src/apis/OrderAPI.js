@@ -2,9 +2,9 @@ const URI = "http://localhost:8080/api/order"
 const URI2 = "http://localhost:8080/api/orders"
 
 const OrderAPI = {
-    createOrder: (orderToCreate) => {
+    createOrder: (orderToCreate, userId) => {
         // fetch( uri for request, request object )
-        fetch( URI + "/{id}", {
+        fetch( URI + `/${userId}`, {
             method: "POST", // type of request
             headers: { "Content-Type": "application/json" }, // header of request
             body: JSON.stringify(orderToCreate) // body of request, convert object to json string
@@ -23,7 +23,7 @@ const OrderAPI = {
                     )
 
             } )
-            .catch( (error) => { console.log(error) } )
+            .catch( (error) => { console.log(error) } );
     },
 
     getOrders: (setOrders) => {
@@ -37,10 +37,14 @@ const OrderAPI = {
             .then((data) => {
                 console.log("DATA: ")
                 console.log(data)
+
+                setOrders(data)
+            }).catch((e) => {
+                console.log(e);
             })
         },
                 
-  getOrderById: (setOrderList, orderId) => {
+    getOrderById: (setOrderList, orderId) => {
         fetch( URI + `/${orderId}`  )
             .then((result) => { // go here if the response is successful (200 response)
                 console.log("RESULT")
@@ -73,20 +77,21 @@ const OrderAPI = {
             .catch((error) => {console.log(error)});
     },
 
-
-    deleteItem: (itemToDelete) => {
-        fetch(URI + "/remove", {
+    deleteItem: (setOrderList, menuItemId, orderId) => {
+        fetch(URI + `/remove?menuItemId=${menuItemId}&orderId=${orderId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
             }
-        }).then((response) => {
-            if(!response.ok){
-                throw new Error('Something went wrong')
-            }
-        }).catch((e) => {
-            console.log(e);
-        });
+        })
+            .then( result => result.json())
+            .then((data) => {
+                console.log("ITEM Deleted: ")
+                console.log(data);
+
+                setOrderList(data);
+            })
+            .catch((error) => {console.log(error)});
     }
 
 
