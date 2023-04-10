@@ -7,7 +7,7 @@ const Container = styled.div`
     height: 6.5rem;
     background-color: #fff;
     box-shadow: 0rem 0.2rem 0.8rem #565656;
-    position: fixed;
+    position: sticky;
     z-index: 10;
 `
 
