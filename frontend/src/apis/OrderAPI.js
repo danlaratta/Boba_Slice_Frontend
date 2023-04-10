@@ -37,6 +37,8 @@ const OrderAPI = {
             .then((data) => {
                 console.log("DATA: ")
                 console.log(data)
+            })
+        },
                 
   getOrderById: (setOrderList, orderId) => {
         fetch( URI + `/${orderId}`  )
@@ -69,8 +71,8 @@ const OrderAPI = {
                 setOrderList(data);
             })
             .catch((error) => {console.log(error)});
-    }
-}
+    },
+
 
     deleteItem: (itemToDelete) => {
         fetch(URI + "/remove", {
