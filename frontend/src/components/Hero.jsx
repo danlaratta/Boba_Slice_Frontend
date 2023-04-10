@@ -4,7 +4,7 @@ import HeroBg from '../assets/Hero-bg.jpg';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
-    min-height: 100vh;
+    height: calc(100vh - 6.5rem);
     width: 100%;
     background-image: url(${HeroBg});
     background-position: center;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `
 
 const Overlay = styled.div`
-    min-height: 100vh;
+    height: calc(100vh - 6.5rem);
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -72,6 +72,7 @@ const MenuLink = styled(Link)`
 
     &:hover {
         background-color: var(--primary);
+        cursor: pointer;
     }
 `
 

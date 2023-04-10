@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 
 const Container = styled.div`
     width: 100%;
-    height: calc(100vh - 6.5rem);
+    height: calc(100vh - 5.8rem);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +62,7 @@ const Submit = styled.button`
     }
 `
 
-const Signup = () => {
+const Signin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -72,7 +72,7 @@ const Signup = () => {
         <Container>
             <Wrapper>
                 <Form onSubmit={handleSubmit}>
-                    <Title> Sign Up </Title>
+                    <Title> Sign In </Title>
                     <FormItem>
                         <Label htmlFor='uname'> Username </Label>
                         <Input type='text' />
@@ -83,31 +83,6 @@ const Signup = () => {
                         <Input type='password' />
                     </FormItem>
 
-                    <FormItem>
-                        <Label htmlFor='fname'> First Name </Label>
-                        <Input type='text' />
-                    </FormItem>
-
-                    <FormItem>
-                        <Label htmlFor='lname'> Last Name </Label>
-                        <Input type='text' />
-                    </FormItem>
-
-                    <FormItem>
-                        <Label htmlFor='email'> Email </Label>
-                        <Input type='email' />
-                    </FormItem>
-
-                    <FormItem>
-                        <Label htmlFor='phone'> Phone </Label>
-                        <Input type='text' />
-                    </FormItem>
-
-                    <FormItem>
-                        <Label htmlFor='payment'> Payment Card </Label>
-                        <Input type='text' />
-                    </FormItem>
-
                     <Submit> Submit </Submit>
                 </Form>
             </Wrapper>
@@ -116,4 +91,4 @@ const Signup = () => {
 }
 
 
-export default Signup;
+export default Signin;
