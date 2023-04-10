@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro'
+
 import MenuItemApi from '../apis/MenuItemApi';
 import MenuItem from '../components/MenuItem';
+
+
 
 const Container = styled.div`
     width: 100%;
@@ -47,7 +50,7 @@ const PizzaMenu = () => {
     // useEffect -> mount the dish items
     useEffect(() => {
         console.log("Dishes Mounted!");
-        MenuItemApi.getDishes(setDishList);
+        MenuItemAPI.getDishes(setDishList);
         
     }, []);
 

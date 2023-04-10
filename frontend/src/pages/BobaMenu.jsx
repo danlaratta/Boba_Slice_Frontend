@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import styled from 'styled-components/macro'
 import MenuItemApi from '../apis/MenuItemApi';
 import MenuItem from '../components/MenuItem';
@@ -41,18 +42,19 @@ const ItemRow = styled.div`
 
 const BobaMenu = () => {
 
+
     // Initial state is empty
     const[drinkList, setDrinkList] = useState([]);
 
     // useEffect -> mount the dish items
     useEffect(() => {
         MenuItemApi.getDrinks(setDrinkList);
-        
     }, []);
 
 
     return (
         <Container>
+
             <Wrapper>
                 <Title> Boba Menu </Title>
 
@@ -66,6 +68,7 @@ const BobaMenu = () => {
                 </MenuContainer>
             </Wrapper>
            
+
         </Container>
     );
 }
